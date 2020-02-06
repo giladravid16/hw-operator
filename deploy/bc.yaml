@@ -1,0 +1,20 @@
+kind: "BuildConfig"
+apiVersion: "build.openshift.io/v1"
+metadata:
+  name: hw-operator
+spec:
+  runPolicy: "Serial"
+  source:
+    git:
+      uri: https://github.com/giladravid16/hw-operator
+  strategy:
+    sourceStrategy:
+      from:
+        kind: "DockerImage"
+        name: "docker.io/dimssss/golang-s2i:0.5"
+  output:
+    to:
+      kind: "DockerImage"
+      name: "docker.io/giladravid16/hw-operator:0.1"
+    pushSecret:
+      name: gilad-redhat-registry-token

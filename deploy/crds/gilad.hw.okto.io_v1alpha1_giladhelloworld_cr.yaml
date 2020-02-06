@@ -1,7 +1,6 @@
 apiVersion: gilad.hw.okto.io/v1alpha1
 kind: GiladHelloWorld
 metadata:
-  name: example-giladhelloworld
+  name: test-giladhelloworld
 spec:
-  # Add fields here
-  size: 3
+  message: <marquee>it works</marquee>
